@@ -1,0 +1,18 @@
+<div style="width:80%; margin:0 auto">
+	<h1 class="be-blue"> Crear Informacion Del Sitio Turistico</h1>
+		<%= form_for(@article) do |f| %>
+			<div class="field">
+				<%= f.text_field :title, placeholder: "Nombre Del Sitio Turistico", class:"form-control" %>
+			</div>
+			<div class="field">
+				<%= f.text_area :body, placeholder: "Informacion Del Sitio",style:"height:250px", class:"form-control"%>
+			</div>
+			<div class="field">
+				<%= f.text_field :location, placeholder: "Localizacion Del Sitio", class:"form-control"%>
+			</div>
+			<div class="field">
+				<%= f.submit "Guardar", class:"btn be-green botton-blue " %>
+			</div>
+		<%end%>
+</div>
+
