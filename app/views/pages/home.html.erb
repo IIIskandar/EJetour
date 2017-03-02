@@ -1,7 +1,7 @@
 <h1>Eje Tour</h1>
 
 <% if current_user %>
-	<%= current_user.inspect %>
+	<div>Bienvenido<%=current_user.name%>-<%= image_tag(current_user.image)%></div>
 <% end %>
 
 <% unless current_user %>
