@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Proyecto</title>
+    <title>Eje Tour</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +10,26 @@
   </head>
 
   <body>
+  	<header>
+  		<nav class="be-green be-blue large-padding">
+  			<ul type="none" class="no list row center-xs middle-xs">
+  				<li >
+  					<h1 class="no-margin" id="logo" >Eje Tour</h1>
+  				</li>
+  				<li class="col-md">
+  					<%= link_to "Inicio", root_path%>
+  				</li>
+  				<li class="col-md">
+  					<% unless current_user %>
+  						<%= link_to "Iniciar Sesion Con Facebook", user_facebook_omniauth_authorize_path %>
+					<% else %>
+  						<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+					<% end %>
+  				</li>
+  			</ul>
+  			
+  		</nav>
+  	</header>
   	
     <%= yield %>
     <p class="notice"><%= notice %></p>
