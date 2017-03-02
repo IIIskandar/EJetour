@@ -20,7 +20,10 @@
   					<%= link_to "Inicio", root_path%>
   				</li>
   				<li class="col-md">
-  					<%= link_to "Sitios Turisticos", root_path%>
+  					<%= link_to "Sitios Turisticos", articles_path%>
+  				</li>
+  				<li class="col-md">
+  					<%= link_to "Agregar Sitios Turisticos", new_article_path%>
   				</li>
   				<li class="col-md">
   					<% unless current_user %>

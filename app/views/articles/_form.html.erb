@@ -1,0 +1,17 @@
+<%= form_for(@article) do |f| %>
+			<% @article.errors.full_messages.each do |message| %>
+				<div class="be-green be-blue field"> <%= message %></div>
+			<%end%>
+			<div class="field">
+				<%= f.text_field :title, placeholder: "Nombre Del Sitio Turistico", class:"form-control" %>
+			</div>
+			<div class="field">
+				<%= f.text_area :body, placeholder: "Informacion Del Sitio",style:"height:250px", class:"form-control"%>
+			</div>
+			<div class="field">
+				<%= f.text_field :location, placeholder: "Localizacion Del Sitio", class:"form-control"%>
+			</div>
+			<div class="field">
+				<%= f.submit "Guardar", class:"btn be-green botton-blue " %>
+			</div>
+<%end%>
