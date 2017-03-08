@@ -1,8 +1,8 @@
 <% @articles.each do |article| %>
-	<h1 class="be-blue"> Nombre Del Sitio: <%= link_to article.title, article%></h1> 
-	<div>Informacion: <%= article.body%></div>
-	<div>Autor: <%=current_user.email%></div>
-	<div>Localizacion: <%= article.location %> - <%= link_to "Eliminar", article, method: :delete, class:"botton-blue"%>
+	<h1 class="be-blue"><%= link_to article.title, article%></h1> 
+	<div><h4 class ="be-blue">Informacion: </h4><%= article.body%></div>
+	<div><h4 class ="be-blue">Autor: </h4><%=current_user.email%></div>
+	<div><h4 class ="be-blue">Localizacion: </h4><%= article.location %> - <%= link_to "Eliminar", article, method: :delete, class:"botton-blue"%>
 	</div>
 
 <%end%>
