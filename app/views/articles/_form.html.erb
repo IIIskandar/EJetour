@@ -11,6 +11,11 @@
 			<div class="field">
 				<%= f.text_field :location, placeholder: "Localizacion Del Sitio", class:"form-control"%>
 			</div>
+			<% if current_user %>
+			<div class="field">
+					<%=current_user.email%>
+			</div>
+			<% end %> 
 			<div class="field">
 				<%= f.submit "Guardar", class:"btn be-green botton-blue " %>
 			</div>
