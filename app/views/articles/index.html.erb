@@ -3,4 +3,5 @@
 	<div><%= article.body%></div>
 	<div><%= article.location %> - <%= link_to "Eliminar", article, method: :delete, class:"botton-blue"%>
 	</div>
+	<div><%=current_user.email%></div>
 <%end%>
