@@ -2,5 +2,7 @@
 <h1 class="be-blue"><%= @article.title %></h1>
 <div><h3> Informacion Del Sitio</h3><%= @article.body %></div>
 <div><h3> Localizacion Del Sitio</h3><%= @article.location %></div>
+<% if current_user %>
 <div><h3> Autor </h3><%=current_user.email%> </div>
+<%end%>
 <div><%=link_to "Editar", edit_article_path(@article), class:"botton-blue"%></div>
