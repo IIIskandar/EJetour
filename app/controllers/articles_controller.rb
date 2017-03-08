@@ -46,4 +46,15 @@ class ArticlesController < ApplicationController
 		@article.destroy
 		redirect_to articles_path
 	end
+
+	def enviarCorreo
+	  #Creamos el usuario
+	  @persona = User.from_omniauth(request.env["omniauth.auth"])
+
+	  # Llamamos al   ActionMailer que creamos
+	  ActionCorreo.bienvenido_email(@persona).deliver
+
+	  # mostramos el usuario en formato JSON
+	  render json: @persona
+	end
 end
