@@ -20,10 +20,6 @@ class ArticlesController < ApplicationController
 								body: params[:article][:body],
 								location: params[:article][:location])
 		if @article.save
-			#Creamos el usuario
-			@user = User.from_omniauth(request.env["omniauth.auth"])
-
-			# Llamamos al   ActionMailer que creamos
 			ActionCorreoMailer.welcome_email(@user).deliver
 			redirect_to @article
 		else
