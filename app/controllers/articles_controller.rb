@@ -20,6 +20,7 @@ class ArticlesController < ApplicationController
 								body: params[:article][:body],
 								location: params[:article][:location])
 		if @article.save
+			@user = current_user
 			ActionCorreoMailer.welcome_email(@user).deliver
 			redirect_to @article
 		else
