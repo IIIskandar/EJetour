@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
 			@persona = User.from_omniauth(request.env["omniauth.auth"])
 
 			# Llamamos al   ActionMailer que creamos
-			ActionCorreo.welcome_email(@persona).deliver
+			ActionCorreoMailer.welcome_email(@persona).deliver
 			redirect_to @article
 		else
 			render :new
