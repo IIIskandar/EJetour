@@ -1,5 +1,5 @@
 class ActionCorreoMailer < ApplicationMailer
-	default from: 'notifications@example.com'
+	default from: 'proyectoejetour@gmail.com'
 
 	def welcome_email(user)
 		@user = user
