@@ -272,4 +272,8 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   config.omniauth :facebook, "1941243359445561", "557b2ebf63f266bd52c5a15056f2926d", callback_url: "https://young-shore-56554.herokuapp.com/users/auth/facebook/callback"
+
+  require 'omniauth-google-oauth2'
+  config.omniauth :google_oauth2, "694201028767-altnpfde5j4rgdfemvpf5aqfh6fpei5b.apps.googleusercontent.com", "ge79isEg6q3bpH2UH5DDJ_E-", {client_options: {ssl: {ca_file: Rails.root.join("cacert.pem").to_s}}}
+
 end

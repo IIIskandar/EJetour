@@ -1,6 +1,6 @@
 html,body{
 	margin: 0px;
-	font-family: 'Lobster', cursive;
+	font-family: 'Slabo 27px', serif;
 }
 
 .btn{
@@ -13,7 +13,7 @@ html,body{
 }
 
 .botton-blue{
-	color: #1A3AA6 !important ;
+	color: #A37C08 !important ;
 }
 
 a,a:visited{
@@ -29,11 +29,11 @@ a,a:visited{
 	margin: 0px;
 }
 .be-green{
-	background-color: #3DE26A;
+	background-color: #00700F;
 }
 
 .be-blue{
-	color: #177CC2;
+	color: #A37C08;
 }
 
 
@@ -44,6 +44,11 @@ a,a:visited{
 
 .field{
 	margin-top: 1em;
+}
+
+.small{
+	width: 4px ;
+	height: 4px ;
 }
 
 .form-control{

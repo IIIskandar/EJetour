@@ -2,8 +2,7 @@
 <html>
   <head>
     <title>Eje Tour</title>
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -25,16 +24,24 @@
   				<li class="col-md">
   					<%= link_to "Agregar Sitios Turisticos", new_article_path%>
   				</li>
+
   				<li class="col-md">
   					<% unless current_user %>
-  						<%= link_to "Iniciar Sesion Con Facebook", user_facebook_omniauth_authorize_path %>
-					<% else %>
-  						<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-					<% end %>
+  						<%= link_to "Entrar Con Facebook", user_facebook_omniauth_authorize_path %>
+					  <% else %>
+  						<%= link_to "Salir", destroy_user_session_path, method: :delete %>
+					  <% end %>
+          </li>
+
+          <li clss="col-md">
+            <% unless current_user %>
+              <%= link_to "Entrar Con Google", user_google_oauth2_omniauth_authorize_path %>
+            <% end %>
   				</li>
+
   				<% if current_user %>
-  				<li class="col-md">
-						<div><%=current_user.name%></div><div><%= image_tag(current_user.image)%></div>
+  				<li class="col-md ">
+						<div><%=current_user.name%></div><div class="small"><%= image_tag(current_user.image)%></div>
   				</li>
   				<% end %>
   			</ul>
