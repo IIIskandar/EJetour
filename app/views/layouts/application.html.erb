@@ -36,8 +36,6 @@
           <li clss="col-md">
             <% unless current_user %>
               <%= link_to "Entrar Con Google", user_google_oauth2_omniauth_authorize_path %>
-            <% else %>
-              <%= link_to "Salir", destroy_user_session_path, method: :delete %>
             <% end %>
   				</li>
 
