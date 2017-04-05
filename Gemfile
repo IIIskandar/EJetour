@@ -14,6 +14,8 @@ gem 'pg', '~> 0.18'
 gem 'bcrypt', platforms: :ruby
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
+#Actioncable para los websockets
+gem 'actioncable'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -54,3 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'omniauth-facebook'
 #oauth2 para autenticacion con google
 gem "omniauth-google-oauth2"
+#submiting messafe form via AJAX
+gem 'sprockets', '>=3.0.0.beta'
+gem 'sprockets-es6'

@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
-  
-
+  resources :messages, only: %i(index)  
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root to: 'pages#home'
 
+
+
   resources :articles
+
+
 #  get "/articles" index
 #  post "/articles"	create
 #  delete "/articles/:id" delete

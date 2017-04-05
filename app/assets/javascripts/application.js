@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require cable
+//= require ./remote
+//= require ./messages
 //= require_tree .
