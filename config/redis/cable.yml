@@ -7,4 +7,4 @@ test:
 
 production:
   adapter: redis
-  url: redis-12184.c8.us-east-1-2.ec2.cloud.redislabs.com:12184
+  url: redis://redis-12184.c8.us-east-1-2.ec2.cloud.redislabs.com:12184
