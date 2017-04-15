@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
+  mount ActionCable.server, at: '/cable'
+
   resources :chatrooms do
   	resource :chatroom_users
   	resources :messages
-  	
+
   end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
