@@ -1,10 +1,15 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  has_many :messages
+  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, 
          :omniauthable, :omniauth_providers => [:facebook,:google_oauth2]
+  
+  has_many :chatroom_users
+  has_many :chatroom, through: :chatroom_users
+  has_many :messages
 
   def self.new_with_session(params, session)
 		super.tap do |user|
@@ -30,12 +35,7 @@ class User < ActiveRecord::Base
 	    user.image = auth.info.image # assuming the user model has an image
 	  end
 	end
-  def as_json(options = {})
-    options.reverse_merge!({
-      only: :uid
-    })
-    super(options)
-  end	
+ 
 end
 
 

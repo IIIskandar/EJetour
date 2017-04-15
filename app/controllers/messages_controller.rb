@@ -1,13 +1,21 @@
 class MessagesController < ApplicationController
-  before_action :require_current_user
+	before_action :authenticate_user!
+	before_action :set_chatroom
 
-  def index
-    @current_messages = Message.current.includes(:user).reverse
-  end
+	def create
+		message = @chatroom.messages.new(message_params)
+		message.user = current_user
+		message.save
+		MessageRelayJob.perform_later(message)
+	end
 
-  private
+	private
 
-  def message_params
-    params.require(:message).permit(:body)
-  end
+	def set_chatroom
+		@chatroom = Chatroom.find(params[:chatroom_id])
+	end
+
+	def message_params
+		params.require(:message).permit(:body)
+	end
 end

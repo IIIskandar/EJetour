@@ -41,12 +41,20 @@
 
   				<% if current_user %>
   				<li class="col-md ">
-						<div><%=current_user.name%></div><div alt="photo" height="42" width="42" ><%= image_tag(current_user.image) %></div>
+						<div><%=current_user.name%></div><div><%= image_tag(current_user.image, size: "50x50") %></div>
   				</li>
   				<% end %>
   			</ul>
   			
   		</nav>
+      <% if current_user %>
+        <h3 class="col-md">Chatrooms</h3>
+            <ul class= "col-md">
+              <% current_user.chatroom.each do |chatroom| %>
+                <li><%= link_to chatroom.name, chatroom, data: {behavior: "chatroom-link", chatroom_id: chatroom.id} %></li>
+              <%end%>
+            </ul>
+      <%end%>
   	</header>
   	
     <%= yield %>

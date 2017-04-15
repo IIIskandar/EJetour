@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :messages, only: %i(index)  
+  resources :chatrooms do
+  	resource :chatroom_users
+  	resources :messages
+  end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  root to: 'pages#home'
+  root to: 'chatrooms#index'
 
 
 

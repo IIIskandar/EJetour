@@ -56,6 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'omniauth-facebook'
 #oauth2 para autenticacion con google
 gem "omniauth-google-oauth2"
-#submiting messafe form via AJAX
-gem 'sprockets', '>=3.0.0.beta'
-gem 'sprockets-es6'
+#bootstrap
+gem 'bootstrap-sass'
+
+gem 'redis', '~>3.2'
