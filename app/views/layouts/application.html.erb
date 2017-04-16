@@ -3,10 +3,102 @@
   <head>
     <title>Eje Tour</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> 
   </head>
+  <style type="text/css">
+    .navbar-default {
+  background-color: #5960b6;
+  border-color: #6b7d85;
+}
+.navbar-default .navbar-brand {
+  color: #fdffff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #eeeeee;
+}
+.navbar-default .navbar-text {
+  color: #fdffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #fdffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #eeeeee;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #5960b6;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #fdffff;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #eeeeee;
+  background-color: #6b7d85;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #6b7d85;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #eeeeee;
+  background-color: #6b7d85;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #eeeeee;
+  background-color: #6b7d85;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #eeeeee;
+  background-color: #6b7d85;
+}
+.navbar-default .navbar-toggle {
+  border-color: #6b7d85;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #6b7d85;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fdffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #fdffff;
+}
+.navbar-default .navbar-link {
+  color: #fdffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #eeeeee;
+}
 
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #fdffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #eeeeee;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #eeeeee;
+    background-color: #6b7d85;
+  }
+}
+  </style>
+  
   <body>
   <div class="container">
     <br>
@@ -69,49 +161,7 @@
             </ul>
             <%end%>
           </div>
-          <!-- 
-  				<div class="col-md-1 col-sm-1 col-xs-1">
-  					<%= link_to "Inicio", root_path%>
-  				</div> 
-  				<div class="col-md-2 col-sm-2 col-xs-2">
-  					<%= link_to "Sitios Turisticos", articles_path%>
-  				</div>
-  				<div class="col-md-2 col-sm-2 col-xs-2">
-  					<%= link_to "Agregar Sitios Turisticos", new_article_path%>
-  				</div>
-
-  				<div class="col-md-2 col-sm-2 col-xs-2">
-  					<% unless current_user %>
-  						<%= link_to "Entrar Con Facebook", user_facebook_omniauth_authorize_path %>
-					  <% else %>
-  						<%= link_to "Salir", destroy_user_session_path, method: :delete %>
-					  <% end %>
-          </div>
-
-          <div class="col-md-1 col-sm-1 col-xs-1">
-            <% unless current_user %>
-              <%= link_to "Entrar Con Google", user_google_oauth2_omniauth_authorize_path %>
-            <% end %>
-  				</div>
-
-  				
-  				<div class="col-md-2 col-sm-2 col-xs-2">
-          <% if current_user %>
-						<strong><%=current_user.name%></strong><div><%= image_tag(current_user.image, size: "50x50") %></div>
-          <% end %>
-  				</div>
-  				-->
-  			</div>
-  			
-  		</nav>
-      <!--<% if current_user %>
-        <h3 class="col-md">Chatrooms</h3>
-            <ul class= "col-md">
-              <% current_user.chatroom.each do |chatroom| %>
-                <li><%= link_to chatroom.name, chatroom, data: {behavior: "chatroom-link", chatroom_id: chatroom.id} %></li>
-              <%end%>
-            </ul>
-      <%end%>-->
+         
   	</header>
   	
     <%= yield %>
