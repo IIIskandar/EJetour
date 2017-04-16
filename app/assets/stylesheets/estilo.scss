@@ -1,9 +1,13 @@
 body 
-{
+{ 
+  color: #fff;
   background-image:url(lugares.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: 'Open Sans', sans-serif;
-  color: #d9edf7;
+}
+
+.panel{
+ background-color: #5960b6; 
 }
