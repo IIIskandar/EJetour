@@ -1,16 +1,40 @@
-<p class="col-md" style="padding-top: 50px">
-  <h2><strong>Sala:</strong><small><%= @chatroom.name %></small></h2>
-  
-</p>
-
-<li class="col-md" type="none">
-	<div data-behavior="messages" data-chatroom-id="<%= @chatroom.id %>">
-		<% @messages.each do |message| %>
-			<%= render message %>
-		<%end%>	
+<div class="panel panel-default full-height" style="padding-top: 30px">
+	<div class="panel-heading">
+		Bienvenido <strong><%= current_user.name  %></strong> Se Encuentra En La Sala:<strong><%= @chatroom.name  %></strong> 
+		
 	</div>
-</li>
 
-<%= form_for [@chatroom, Message.new] do |f| %>
-	<%= f.text_area :body, rows: 1, class: "form-control", autufocus: true%>
-<%end%>
+	<div class="panel-body full-height bottom-padding">
+		<div class="messages-list full-height">
+			<div data-behavior="messages" data-chatroom-id="<%= @chatroom.id %>">
+				<% @messages.each do |message| %>
+					<%= render message %>
+				<%end%>	
+			</div>
+		</div>
+	</div>
+
+	<div class="panel-footer chat-text-input">
+		<%= form_for [@chatroom, Message.new] do |f| %>
+			<%= f.text_area :body, rows: 1, class: "form-control", autufocus: true%>
+		<%end%>
+	</div>  
+
+	<!--	<p class="col-md" style="padding-top: 50px">
+		  <h2><strong>Sala:</strong><small><%= @chatroom.name %></small></h2>
+		  
+		</p>
+
+
+		<li class="col-md" type="none">
+			<div data-behavior="messages" data-chatroom-id="<%= @chatroom.id %>">
+				<% @messages.each do |message| %>
+					<%= render message %>
+				<%end%>	
+			</div>
+		</li>
+
+		<%= form_for [@chatroom, Message.new] do |f| %>
+			<%= f.text_area :body, rows: 1, class: "form-control", autufocus: true%>
+		<%end%>-->
+</div>
